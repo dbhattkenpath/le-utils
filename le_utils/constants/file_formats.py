@@ -38,6 +38,14 @@ MP3_MIMETYPE = ".mp3"
 # constants for Document format
 PDF = "pdf"
 PDF_MIMETYPE = "application/pdf"
+TXT = "txt"
+TXT_MIMETYPE = "text/plain"
+XLS = "xls"
+XLS_MIMETYPE = "application/vnd.ms-excel"   
+DOCX = "docx"
+DOCX_MIMETYPE = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+PPTX = "pptx"
+PPTX_MIMETYPE = "application/vnd.openxmlformats-officedocument.presentationml.presentation"  
 
 # constants for Thumbnail format
 JPG = "jpg"
@@ -94,6 +102,10 @@ choices = (
     (H5P, "H5P"),
     (ZIM, "ZIM"),
     (EPUB, "ePub Document"),
+    (TXT, "TXT Document"),
+    (XLS, "Excel Document"),
+    (PPTX, "Powepoint Document"),
+    (DOCX, "Word Document")
 )
 
 

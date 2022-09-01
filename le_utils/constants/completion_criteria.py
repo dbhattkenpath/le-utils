@@ -27,28 +27,13 @@ COMPLETIONCRITERIALIST = [
 ]
 
 SCHEMA = {
-    "$id": "/schemas/completion_criteria",
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "type": "object",
     "description": "Schema for completion criteria of content nodes",
-    "additionalProperties": False,
-    "definitions": {
-        "model": {
-            "type": "string",
-            "$exportConstants": "completion_criteria",
-            "enum": ["time", "approx_time", "pages", "mastery", "reference"],
-        },
-        "mastery_criteria": {"$ref": "/schemas/mastery_criteria"},
-    },
-    "properties": {
-        "model": {"$ref": "#/definitions/model"},
-        "learner_managed": {"type": "boolean"},
-        "threshold": True,
-    },
-    "required": ["model"],
+    "$id": "/schemas/completion_criteria",
     "anyOf": [
         {
+            "required": ["threshold"],
             "properties": {
+                "threshold": {"exclusiveMinimum": 0, "type": "number"},
                 "model": {
                     "anyOf": [
                         {"const": "time"},
@@ -56,36 +41,51 @@ SCHEMA = {
                         {"const": "pages"},
                     ]
                 },
-                "threshold": {"type": "number", "exclusiveMinimum": 0},
             },
-            "required": ["threshold"],
         },
         {
+            "required": ["threshold"],
             "properties": {
-                "model": {"const": "pages"},
                 "threshold": {
-                    "type": "string",
                     "pattern": "^(100|[1-9][0-9]?)%$",
+                    "maxLength": 4,
+                    "type": "string",
                     "description": "A percentage",
                     "minLength": 2,
-                    "maxLength": 4,
                 },
+                "model": {"const": "pages"},
             },
-            "required": ["threshold"],
         },
         {
+            "required": ["threshold"],
             "properties": {
-                "model": {"const": "mastery"},
                 "threshold": {"$ref": "#/definitions/mastery_criteria"},
+                "model": {"const": "mastery"},
             },
-            "required": ["threshold"],
         },
         {
-            "properties": {
-                "model": {"const": "reference"},
-                "threshold": {"type": "null"},
-            },
             "required": [],
+            "properties": {
+                "threshold": {"type": "null"},
+                "model": {"const": "reference"},
+            },
         },
     ],
+    "required": ["model"],
+    "additionalProperties": False,
+    "definitions": {
+        "model": {
+            "$exportConstants": "completion_criteria",
+            "enum": ["time", "approx_time", "pages", "mastery", "reference"],
+            "type": "string",
+        },
+        "mastery_criteria": {"$ref": "/schemas/mastery_criteria"},
+    },
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "threshold": True,
+        "model": {"$ref": "#/definitions/model"},
+        "learner_managed": {"type": "boolean"},
+    },
 }

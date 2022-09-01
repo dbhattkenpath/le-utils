@@ -1,4 +1,4 @@
-{
+	{
 	"mp4": {
 		"mimetype": "video/mp4"
 	},
@@ -49,5 +49,17 @@
 	},
 	"zip": {
 		"mimetype": ".zip"
+	},
+	"txt": {
+		"mimetype": "text/plain"
+	},
+	"xls": {
+		"mimetype": "application/vnd.ms-excel"
+	},
+	"docx": {
+		"mimetype": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+	},
+	"pptx": {
+		"mimetype": "application/vnd.openxmlformats-officedocument.presentationml.presentation "
 	}
 }

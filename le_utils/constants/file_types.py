@@ -27,6 +27,10 @@ MAPPING = {
     #
     # DocumentFile formats
     file_formats.PDF: DOCUMENT,
+    file_formats.TXT: DOCUMENT,
+    file_formats.XLS: DOCUMENT,
+    file_formats.PPTX: DOCUMENT,
+    file_formats.DOCX: DOCUMENT,
     file_formats.EPUB: EPUB,
     #
     # formats HTMLZipFile

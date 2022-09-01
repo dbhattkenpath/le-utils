@@ -18,6 +18,7 @@ SLIDESHOW = "slideshow"
 H5P = "h5p"
 ZIM = "zim"
 QUIZ = "quiz"
+UPLOADURL = "uploadurl"
 
 choices = (
     (TOPIC, "Topic"),
@@ -30,6 +31,7 @@ choices = (
     (H5P, "H5P"),
     (ZIM, "Zim"),
     (QUIZ, "Quiz"),
+    (UPLOADURL, "Uploadurl"),
 )
 
 """ File Format (extension) to Content Kind Mapping """

@@ -30,35 +30,13 @@ MASTERYCRITERIALIST = [
 ]
 
 SCHEMA = {
-    "$id": "/schemas/mastery_criteria",
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "type": "object",
     "description": "Schema for mastery criteria of exercise content types",
-    "additionalProperties": False,
-    "required": ["mastery_model"],
-    "definitions": {
-        "mastery_model": {
-            "type": "string",
-            "$exportConstants": "mastery_criteria",
-            "enum": [
-                "do_all",
-                "m_of_n",
-                "num_correct_in_a_row_2",
-                "num_correct_in_a_row_3",
-                "num_correct_in_a_row_5",
-                "num_correct_in_a_row_10",
-            ],
-        }
-    },
-    "properties": {
-        "m": True,
-        "n": True,
-        "mastery_model": {"$ref": "#/definitions/mastery_model"},
-    },
+    "$id": "/schemas/mastery_criteria",
     "anyOf": [
-        {"properties": {"mastery_model": {"const": "m_of_n"}}, "required": ["m", "n"]},
+        {"required": ["m", "n"], "properties": {"mastery_model": {"const": "m_of_n"}}},
         {
             "properties": {
+                "m": {"type": "null"},
                 "mastery_model": {
                     "enum": [
                         "do_all",
@@ -68,9 +46,31 @@ SCHEMA = {
                         "num_correct_in_a_row_10",
                     ]
                 },
-                "m": {"type": "null"},
                 "n": {"type": "null"},
             }
         },
     ],
+    "required": ["mastery_model"],
+    "additionalProperties": False,
+    "definitions": {
+        "mastery_model": {
+            "$exportConstants": "mastery_criteria",
+            "enum": [
+                "do_all",
+                "m_of_n",
+                "num_correct_in_a_row_2",
+                "num_correct_in_a_row_3",
+                "num_correct_in_a_row_5",
+                "num_correct_in_a_row_10",
+            ],
+            "type": "string",
+        }
+    },
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "mastery_model": {"$ref": "#/definitions/mastery_model"},
+        "m": True,
+        "n": True,
+    },
 }

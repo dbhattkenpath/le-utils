@@ -131,6 +131,78 @@
 		"allowed_formats": ["png", "jpg", "jpeg"],
 		"convertible_formats": []
 	},
+	"txt": {
+		"readable_name": "Text",
+		"multi_language": false,
+		"supplementary": false,
+		"thumbnail": false,
+		"subtitle": false,
+		"display": true,
+		"order": 1,
+		"kind": "document",
+		"allowed_formats": ["txt"],
+		"convertible_formats": []
+	},
+	"txt_thumbnail": {
+		"readable_name": "Thumbnail",
+		"multi_language": false,
+		"supplementary": true,
+		"thumbnail": true,
+		"subtitle": false,
+		"display": true,
+		"order": 2,
+		"kind": "document",
+		"allowed_formats": ["png", "jpg", "jpeg"],
+		"convertible_formats": []
+	},
+	"docx": {
+	       "readable_name": "Word Document",
+	       "multi_language": false,
+	       "supplementary": false,
+	       "thumbnail": false,
+	       "subtitle": false,
+	       "display": true,
+	       "order": 1,
+	       "kind": "document",
+	       "allowed_formats": ["docx"],
+	       "convertible_formats": []
+	},
+	"docx_thumbnail": {
+	      "readable_name": "thumbnail",
+	      "multi_language": false,
+	      "supplementary": true,
+	      "thumbnail": true,
+	      "subtitle": false,
+	      "display": true,
+	      "order": 2,
+	      "kind": "document",
+	      "allowed_formats": ["png", "jpg", "jpeg"],
+	      "convertible_formats": []
+	},
+	"pptx": {
+	      "readable_name": "PowerPoint",
+	      "multi_language": false,
+	      "supplementary": false,
+	      "thumbnail": false,
+	      "subtitle": false,
+	      "display": true,
+	      "order": 1,
+	      "kind": "document",
+	      "allowed_formats": ["pptx"],
+	      "convertible_formats": []
+	},
+	"pptx_thumbnail": {
+	      "readable_name": "thumbnail",
+	      "multi_language": false,
+	      "supplementary": true,
+	      "thumbnail": true,
+	      "subtitle": false,
+	      "display": true,
+	      "order": 2,
+	      "kind": "document",
+	      "allowed_formats": ["png", "jpg", "jpeg"],
+	      "convertible_formats": []
+	},
 	"exercise": {
 		"readable_name": "Exercise",
 		"multi_language": false,
